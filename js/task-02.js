@@ -5,17 +5,11 @@ const ingredients = [
   'Tomatos',
   'Herbs',
   'Condiments',
+  
 ];
  
 const ulList = document.getElementById('ingredients');
-const fragment = document.createDocumentFragment();
 
-for (const ingredient of ingredients) {
-  const liItem = document.createElement('li');
-  liItem.textContent = ingredient;
-  liItem.className = "item";
-  fragment.appendChild(liItem)
-  console.dir(liItem)
-}
+const ing = ingredients.map((ingredient)=>`<li>${ingredient}</li>`).join('')
 
-ulList.appendChild(fragment)
+ulList.insertAdjacentHTML('afterbegin', ing)

@@ -6,11 +6,11 @@ function subFunction (evt) {
     evt.preventDefault();
     const { elements: { email, password } } = evt.currentTarget;
     const data = {
-        Email: [email.value],
-        Password: [password.value],
+        Email: email.value,
+        Password: password.value,
     }
     if (email.value === '' || password.value === '') {
-        return window.alert('Заповніть всі поля')
+        return alert('Заповніть всі поля')
     }
     
     console.log(data)
